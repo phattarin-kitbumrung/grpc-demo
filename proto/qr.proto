@@ -1,0 +1,17 @@
+syntax = "proto3";
+package services;
+option go_package="./services";
+
+service Qr {
+    rpc Qr(stream QrRequest) returns(stream QrResponse);
+}
+
+message QrRequest {
+    string message = 1;
+    string filename = 2;
+}
+
+message QrResponse {
+    string message = 1;
+    string filename = 2;
+}
